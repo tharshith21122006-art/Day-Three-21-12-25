@@ -1,0 +1,15 @@
+class Bank {
+    synchronized void withdraw(int amount) {
+        System.out.println("Withdraw: " + amount);
+    }
+
+    public static void main(String[] args) {
+        Bank b = new Bank();
+
+        Thread t1 = new Thread(() -> b.withdraw(1000));
+        Thread t2 = new Thread(() -> b.withdraw(2000));
+
+        t1.start();
+        t2.start();
+    }
+}
