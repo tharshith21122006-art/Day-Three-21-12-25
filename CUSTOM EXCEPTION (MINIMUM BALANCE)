@@ -1,0 +1,18 @@
+class MinimumBalanceException extends Exception {
+    MinimumBalanceException(String msg) {
+        super(msg);
+    }
+}
+
+class Account {
+    public static void main(String[] args) {
+        int balance = 2000;
+
+        try {
+            if (balance < 3000)
+                throw new MinimumBalanceException("Minimum balance required");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
